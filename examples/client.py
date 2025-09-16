@@ -7,4 +7,4 @@ sock.send(b'Hello')
 data = sock.recv(1024)
 sock.close()
 
-print(data)
+print(data.decode())

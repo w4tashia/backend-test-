@@ -13,6 +13,6 @@ while True:
     if not data:
         break
     conn.send(data + b" GOIDA!")
-    print(data)
+    print(data.decode())
 
 conn.close()
