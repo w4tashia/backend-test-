@@ -33,6 +33,15 @@ int main() {
         perror("send");
     }
 
+    char buffer[1024];
+    ssize_t bytes_received = read(sock, buffer, sizeof(buffer) - 1);
+    if (bytes_received < 0) {
+        perror("read");
+    } else {
+        buffer[bytes_received] = '\0';
+        printf("Received from server: %s\n", buffer);
+    }
+
     close(sock);
 
     return 0;
